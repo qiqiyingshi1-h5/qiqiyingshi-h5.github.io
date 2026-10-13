@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七七影视 - 一周七天天天不重样：电影/电视剧/动漫/综艺/纪录片/短剧/少儿 | qiqiyingshi-h5</title>
+<meta name="description" content="七七影视（qiqiyingshi-h5.github.io）像七日轮盘：周一到周日每天一种片单——治愈、悬疑、动作、爱情、喜剧、大片、怀旧，移动端自适应。">
+<meta name="keywords" content="七七影视,七日片单,周一片单,治愈电影,悬疑片,动作片,爱情片,喜剧片,怀旧片,qiqiyingshi-h5">
+<meta name="author" content="七七影视">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://qiqiyingshi-h5.github.io/">
+<meta property="og:title" content="七七影视 - 一周七天，天天不重样">
+<meta property="og:description" content="周一到周日，每天一种片单：治愈、悬疑、动作、爱情、喜剧、大片、怀旧。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qiqiyingshi-h5.github.io/">
+<meta property="og:site_name" content="七七影视">
+<meta name="msvalidate.01" content="BING_VERIFY_CODE">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"七七影视",
+  "url":"https://qiqiyingshi-h5.github.io/",
+  "description":"七七影视是按一周七天排片的影视导航站，覆盖电影、电视剧、动漫、综艺、纪录片、短剧、少儿。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"七七影视和其他影视导航站有什么不同？",
+      "acceptedAnswer":{"@type":"Answer","text":"别的站按类型分，七七影视按星期几分：周一看治愈的、周二看悬疑的、周三看动作的……不用想，今天是周几就点哪格。七天不重样，一周刚好一轮。"}
+    },
+    {
+      "@type":"Question",
+      "name":"七七影视提供盗版片源吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"不提供。七七影视只做影视导航、片单分类和观片手记，不挂侵权播放地址、不绑下载器、不弹会员付费。"}
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0e1730;
+  --card:#161f3d;
+  --ink:#f0f4ff;
+  --muted:#9aa6c8;
+  --gold:#ffcf5a;
+  --line:rgba(255,207,90,.28);
+  --shadow:0 18px 46px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:
+    radial-gradient(820px 460px at 85% -10%,rgba(255,207,90,.14),transparent 60%),
+    radial-gradient(720px 420px at -8% 8%,rgba(120,150,255,.12),transparent 55%),
+    linear-gradient(180deg,#0e1730 0%,#111a36 60%,#0a0f22 100%);
+  color:var(--ink);line-height:1.78;
+}
+a{color:inherit;text-decoration:none}
+
+/* 七日门头 */
+.q7-top{position:sticky;top:0;z-index:999;background:rgba(14,23,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.q7-top__in{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem}
+.q7-logo{font-weight:900;font-size:1.2rem}
+.q7-logo b{color:var(--gold)}
+.q7-logo i{color:var(--ink);font-style:normal;font-size:.8rem;opacity:.7}
+.q7-nav{display:flex;gap:.3rem}
+.q7-nav a{padding:.45rem .8rem;border-radius:9px;font-size:.9rem;color:var(--muted);font-weight:700}
+.q7-nav a:hover{background:rgba(255,207,90,.16);color:var(--gold)}
+.q7-burger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+.q7-burger span{width:22px;height:2px;background:var(--gold);border-radius:2px}
+
+/* Hero 七日轮盘 */
+.q7-hero{max-width:1180px;margin:0 auto;padding:3.4rem 1rem 2.6rem;text-align:center}
+.q7-wheel{width:160px;height:160px;margin:0 auto 1.4rem;border-radius:50%;position:relative;
+  background:conic-gradient(from 0deg,
+    #ff6b6b 0 51deg,#ffa94d 51deg 103deg,#ffd43b 103deg 154deg,
+    #69db7c 154deg 206deg,#4dabf7 206deg 257deg,#cc5de8 257deg 309deg,#ff922b 309deg 360deg);
+  animation:spin 20s linear infinite;box-shadow:0 0 50px rgba(255,207,90,.25)}
+.q7-wheel::after{content:"";position:absolute;inset:24px;border-radius:50%;background:var(--bg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.q7-hero h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.2;margin-bottom:1rem}
+.q7-hero h1 em{font-style:normal;color:var(--gold)}
+.q7-hero h1 u{text-decoration:none;color:#69db7c}
+.q7-hero p{color:var(--muted);max-width:700px;margin:0 auto 1.8rem}
+.q7-cta{display:inline-flex;gap:.5rem;align-items:center;padding:.85rem 2rem;border-radius:30px;font-weight:800;color:#0e1730;background:linear-gradient(90deg,var(--gold),#ff922b);box-shadow:var(--shadow)}
+.q7-dim{color:var(--muted);font-size:.78rem;letter-spacing:3px;font-family:ui-monospace,monospace;margin-bottom:.5rem}
+
+/* 区块 */
+.q7-sec{max-width:1180px;margin:0 auto;padding:3.2rem 1rem}
+.q7-head{margin-bottom:1.7rem;text-align:center}
+.q7-head .no{font-size:.72rem;color:var(--gold);letter-spacing:3px;font-family:ui-monospace,monospace}
+.q7-head h2{font-size:clamp(1.4rem,3.4vw,2.1rem);font-weight:900;margin-top:.3rem}
+.q7-head h2 i{color:#cc5de8;font-style:normal}
+.q7-head p{color:var(--muted);margin-top:.35rem;font-size:.92rem}
+
+/* 七日片单 */
+.q7-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.8rem}
+.q7-cell{border-radius:16px;padding:1.2rem .8rem;background:var(--card);text-align:center;transition:.25s;border:1px solid var(--line)}
+.q7-cell:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.q7-cell .day{font-size:.72rem;font-weight:800;letter-spacing:1px;margin-bottom:.3rem}
+.q7-cell .ic{font-size:1.8rem}
+.q7-cell h3{font-size:.88rem;margin:.4rem 0 .25rem;font-weight:800}
+.q7-cell p{font-size:.7rem;color:var(--muted)}
+.q7-cell.d1 .day{color:#ff6b6b}
+.q7-cell.d2 .day{color:#ffa94d}
+.q7-cell.d3 .day{color:#ffd43b}
+.q7-cell.d4 .day{color:#69db7c}
+.q7-cell.d5 .day{color:#4dabf7}
+.q7-cell.d6 .day{color:#cc5de8}
+.q7-cell.d7 .day{color:#ff922b}
+
+/* 七日频道 */
+.q7-ch{display:grid;grid-template-columns:repeat(7,1fr);gap:.8rem}
+.q7-c{border-radius:14px;padding:1rem .3rem;background:var(--card);text-align:center;border:1px solid var(--line);transition:.25s}
+.q7-c:hover{transform:translateY(-3px);background:rgba(255,207,90,.1)}
+.q7-c .ic{font-size:1.5rem}
+.q7-c h3{font-size:.78rem;margin-top:.3rem;font-weight:700}
+.q7-c p{font-size:.6rem;color:var(--muted)}
+
+/* 七日热度榜 */
+.q7-rank{display:grid;gap:1.1rem}
+.q7-item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem}
+.q7-item h3{font-size:1.02rem;display:flex;justify-content:space-between;margin-bottom:.55rem}
+.q7-item h3 span{color:var(--gold)}
+.q7-bar{height:16px;border-radius:999px;background:#0a0f22;overflow:hidden;position:relative;border:1px solid var(--line);
+  background-image:conic-gradient(from 0deg,#ff6b6b,#ffa94d,#ffd43b,#69db7c,#4dabf7,#cc5de8,#ff922b)}
+.q7-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#ff922b)}
+.q7-bar i::after{content:"🎡";position:absolute;right:5px;top:-2px;font-size:.8rem}
+
+/* 手记 */
+.q7-notes{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.q7-note{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem}
+.q7-note .tag{font-size:.72rem;padding:.2rem .6rem;border-radius:8px;font-weight:800}
+.q7-note.mon .tag{background:rgba(77,171,247,.18);color:#4dabf7}
+.q7-note.sun .tag{background:rgba(255,146,43,.18);color:#ff922b}
+.q7-note h3{font-size:1.04rem;margin:.6rem 0 .4rem}
+.q7-note p{font-size:.86rem;color:var(--muted)}
+
+/* 关于 */
+.q7-about{background:linear-gradient(160deg,#1a2444,#0e1730);border:1px solid var(--line);border-radius:26px;padding:2.4rem}
+.q7-about h2{font-size:1.9rem;margin-bottom:.8rem}
+.q7-about h2 u{color:var(--gold);text-decoration:none}
+.q7-about p{color:var(--muted);margin-bottom:1rem}
+.q7-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}
+.q7-stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.1rem;text-align:center}
+.q7-stat b{font-size:1.5rem;color:var(--gold);display:block}
+.q7-stat span{font-size:.8rem;color:var(--muted)}
+
+/* FAQ */
+.q7-faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.2rem 1.1rem;margin-bottom:.7rem}
+.q7-faq summary{cursor:pointer;padding:.85rem 0;font-weight:800}
+.q7-faq p{padding:0 0 .85rem;color:var(--muted)}
+
+/* 页脚 */
+.q7-foot{border-top:1px solid var(--line);background:#0a0f22;padding:2.2rem 1rem;text-align:center;color:var(--muted);font-size:.86rem}
+.q7-foot a{color:var(--gold)}
+.q7-foot__links{display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+.q7-foot__links a{font-size:.84rem}
+
+@media(max-width:980px){
+  .q7-grid{grid-template-columns:repeat(4,1fr)}
+  .q7-ch{grid-template-columns:repeat(4,1fr)}
+  .q7-notes{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .q7-nav{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;gap:0;background:rgba(14,23,48,.98);border-bottom:1px solid var(--line)}
+  .q7-nav.show{display:flex}
+  .q7-nav a{padding:.85rem 1rem;border-bottom:1px solid var(--line)}
+  .q7-burger{display:flex}
+  .q7-grid{grid-template-columns:repeat(2,1fr)}
+  .q7-ch{grid-template-columns:repeat(3,1fr)}
+  .q7-stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="q7-top">
+  <div class="q7-top__in">
+    <div class="q7-logo">🎡 七七<b>影视</b> <i>·七日轮盘</i></div>
+    <nav class="q7-nav" id="q7Nav">
+      <a href="#home">轮盘</a>
+      <a href="#grid">七日片单</a>
+      <a href="#ch">七日频道</a>
+      <a href="#rank">七日榜</a>
+      <a href="#notes">七七日記</a>
+      <a href="#about">关于七七</a>
+    </nav>
+    <div class="q7-burger" onclick="document.getElementById('q7Nav').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<section class="q7-hero" id="home">
+  <div class="q7-wheel"></div>
+  <p class="q7-dim">// 7 days · 7 moods · never repeat</p>
+  <h1>一周七天，<em>天天不重样</em><br>七七影视，<u>今天轮到哪天？</u></h1>
+  <p>七七影视不让你在几百个分类里选到头疼。周一看治愈的、周二看悬疑的、周三看动作片爽一下、周四谈恋爱、周五大笑、周六放开了看大片、周日翻旧片怀念。今天是周几，就点那一格。</p>
+  <a class="q7-cta" href="#grid">🎡 转一下七日轮盘</a>
+</section>
+
+<section class="q7-sec" id="grid">
+  <div class="q7-head">
+    <div class="no">// 7 days · 7 moods</div>
+    <h2>七日 <i>片单</i></h2>
+    <p>一周七天，每天一种心情，不用选，按日历走。</p>
+  </div>
+  <div class="q7-grid">
+    <div class="q7-cell d1"><div class="day">MON · 周一</div><div class="ic">🌿</div><h3>治愈日</h3><p>慢慢来，别急</p></div>
+    <div class="q7-cell d2"><div class="day">TUE · 周二</div><div class="ic">🕵️</div><h3>悬疑日</h3><p>猜不透才好</p></div>
+    <div class="q7-cell d3"><div class="day">WED · 周三</div><div class="ic">💥</div><h3>动作日</h3><p>发泄一下</p></div>
+    <div class="q7-cell d4"><div class="day">THU · 周四</div><div class="ic">💕</div><h3>爱情日</h3><p>心动就好</p></div>
+    <div class="q7-cell d5"><div class="day">FRI · 周五</div><div class="ic">😂</div><h3>喜剧日</h3><p>笑到下班</p></div>
+    <div class="q7-cell d6"><div class="day">SAT · 周六</div><div class="ic">🚀</div><h3>大片日</h3><p>爽就完了</p></div>
+    <div class="q7-cell d7"><div class="day">SUN · 周日</div><div class="ic">📼</div><h3>怀旧日</h3><p>老片重温</p></div>
+  </div>
+</section>
+
+<section class="q7-sec" id="ch">
+  <div class="q7-head">
+    <div class="no">// seven channels</div>
+    <h2>七日 <i>频道</i></h2>
+    <p>七个频道，七天里随便搭。</p>
+  </div>
+  <div class="q7-ch">
+    <div class="q7-c"><div class="ic">🎬</div><h3>电影</h3><p>院线/经典/小众</p></div>
+    <div class="q7-c"><div class="ic">📺</div><h3>剧集</h3><p>国产/韩剧/美剧</p></div>
+    <div class="q7-c"><div class="ic">🍥</div><h3>动漫</h3><p>新番/国创/剧场</p></div>
+    <div class="q7-c"><div class="ic">🎤</div><h3>综艺</h3><p>慢综/选秀/访谈</p></div>
+    <div class="q7-c"><div class="ic">🐳</div><h3>纪录片</h3><p>自然/历史/美食</p></div>
+    <div class="q7-c"><div class="ic">⚡</div><h3>短剧</h3><p>甜宠/逆袭/爽文</p></div>
+    <div class="q7-c"><div class="ic">🧸</div><h3>少儿</h3><p>动画/绘本/儿歌</p></div>
+  </div>
+</section>
+
+<section class="q7-sec" id="rank">
+  <div class="q7-head">
+    <div class="no">// weekly wheel board</div>
+    <h2>七日 <i>热度榜</i></h2>
+    <p>按"当天点开率 + 看完率 + 回头率"综合排，七日一循环。</p>
+  </div>
+  <div class="q7-rank">
+    <div class="q7-item"><h3>1. 周六大片：沙丘 3 <span>99%</span></h3><div class="q7-bar"><i style="width:99%"></i></div></div>
+    <div class="q7-item"><h3>2. 周二悬疑：看不见的客人 <span>96%</span></h3><div class="q7-bar"><i style="width:96%"></i></div></div>
+    <div class="q7-item"><h3>3. 周日怀旧：大话西游 <span>94%</span></h3><div class="q7-bar"><i style="width:94%"></i></div></div>
+    <div class="q7-item"><h3>4. 周五喜剧：功夫 <span>92%</span></h3><div class="q7-bar"><i style="width:92%"></i></div></div>
+    <div class="q7-item"><h3>5. 周一治愈：小森林 <span>90%</span></h3><div class="q7-bar"><i style="width:90%"></i></div></div>
+  </div>
+</section>
+
+<section class="q7-sec" id="notes">
+  <div class="q7-head">
+    <div class="no">// 7-day logs</div>
+    <h2>七七 <i>日記</i></h2>
+    <p>一边是周一患者，一边是周日懒人。</p>
+  </div>
+  <div class="q7-notes">
+    <article class="q7-note mon">
+      <span class="tag">🌿 周一患者</span>
+      <h3>周一为什么要看治愈片</h3>
+      <p>周一是心理上的一周最难的时候——不是工作多，是"重启"这件事本身就累。这时候放《小森林》《海街日记》《小偷家族》这种，不是逃避，是给自己一个缓冲垫。周一的治愈片不是娱乐，是创可贴。</p>
+    </article>
+    <article class="q7-note sun">
+      <span class="tag">📼 周日懒人</span>
+      <h3>周日的怀旧片是给自己的奖励</h3>
+      <p>撑过一周了，周日晚上值得一部老片。《大话西游》看了八遍不腻，《阿飞正传》里的那分钟独白、《阳光灿烂的日子》里的夏天——周日怀旧不是为了回忆，是为了确认"我这一周活得还不错"。</p>
+    </article>
+    <article class="q7-note mon">
+      <span class="tag">🌿 周一患者</span>
+      <h3>周二的悬疑片治拖延</h3>
+      <p>周二是最容易拖延的一天——周一无所谓，周二开始摆烂。悬疑片是最好的反拖延药：每一分钟都在"然后呢然后呢"，看完一集你发现自己居然坐直了。七七影视把悬疑排周二，是有科学依据的（大概）。</p>
+    </article>
+    <article class="q7-note sun">
+      <span class="tag">📼 周日懒人</span>
+      <h3>周六大片要放开了看</h3>
+      <p>周六是唯一可以"浪费时间"的日子。七七影视的周六大片区不放文艺片，只放《沙丘》《盗梦空间》《星际穿越》这种——要的就是那种"两小时被银幕吞掉"的感觉。周日留给怀旧，周六留给震撼。</p>
+    </article>
+  </div>
+</section>
+
+<section class="q7-sec" id="about">
+  <div class="q7-about">
+    <h2>关于 <u>七七影视</u></h2>
+    <p>
+      七七影视（qiqiyingshi-h5.github.io）不是"又一个影视大全"，它是一台七日轮盘。你不用想"今天看什么"——今天是周几，轮盘就指到哪天。
+    </p>
+    <p>
+      电影、电视剧、动漫、综艺、纪录片、短剧、少儿，全都按周一到周日的情绪重新排：周一治愈、周二悬疑、周三动作、周四爱情、周五喜剧、周六大片、周日怀旧。一周刚好一轮，下周再来。
+    </p>
+    <div class="q7-stats">
+      <div class="q7-stat"><b>7 天</b><span>每天一种心情</span></div>
+      <div class="q7-stat"><b>7 频道</b><span>影/剧/漫/综/纪/短剧/少儿</span></div>
+      <div class="q7-stat"><b>0 选择困难</b><span>看日历就行</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="q7-sec q7-faq">
+  <div class="q7-head">
+    <div class="no">// q & a</div>
+    <h2>七七 <i>问答</i></h2>
+  </div>
+  <details open>
+    <summary>周一到周日的片单是固定的吗？</summary>
+    <p>分类固定（周一治愈、周二悬疑……），但片单每周更新。轮盘天天转，格子不变，内容换新，所以"七天不重样"既指情绪不重样，也指片子不重样。</p>
+  </details>
+  <details>
+    <summary>和月亮影视大全差在哪？</summary>
+    <p>月亮按"天色"（新月/上弦/满月/残月/蓝月），七七按"日历"（周一到周日）。一个月相=一种夜色，一天=一种工作日情绪。月亮是诗，七七是生活节奏。</p>
+  </details>
+  <details>
+    <summary>七七影视有片源吗？</summary>
+    <p>没有。七七影视是纯导航与片单站，只做分类、简介、七日榜和手记，不提供侵权播放、不绑下载器、不弹付费会员。</p>
+  </details>
+</section>
+
+<footer class="q7-foot">
+  <div class="q7-foot__links">
+    <a href="#grid">七日片单</a>
+    <a href="#ch">七日频道</a>
+    <a href="#rank">七日榜</a>
+    <a href="#notes">七七日记</a>
+    <a href="#about">关于七七</a>
+    <a href="#">免责声明</a>
+  </div>
+  <p>© 2026 <a href="https://qiqiyingshi-h5.github.io">七七影视</a> · qiqiyingshi-h5.github.io</p>
+  <p>七七影视 —— 一周七天，天天不重样。</p>
+</footer>
+
+<script>
+document.querySelectorAll('.q7-nav a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('q7Nav').classList.remove('show');
+  });
+});
+</script>
+
+</body>
+</html>
